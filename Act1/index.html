@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroTech - Tienda de Electrónica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <button class="hamburger" id="btn-open">&#9776;</button>
+    <div class="logo">ElectroTech</div>
+    <nav class="nav-desktop">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#resenas">Reseñas</a>
+    </nav>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <button class="btn-close" id="btn-close">&times;</button>
+    <nav class="nav-sidebar">
+      <a href="#inicio" class="sidebar-link">Inicio</a>
+      <a href="#productos" class="sidebar-link">Productos</a>
+      <a href="#resenas" class="sidebar-link">Reseñas</a>
+    </nav>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <section id="inicio" class="hero">
+    <h1>La mejor tecnología al alcance de tu mano</h1>
+    <p>Encuentra tus dispositivos favoritos con los mejores precios del mercado.</p>
+  </section>
+
+  <section id="productos" class="section">
+    <h2>Productos Destacados</h2>
+    <div class="grid-container">
+      
+      <div class="card">
+        <img src="https://via.placeholder.com/250x180?text=Audifonos" alt="Audífonos Bluetooth">
+        <h3>Audífonos Bluetooth</h3>
+        <p class="price">$59.99</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/250x180?text=Smartwatch" alt="Smartwatch">
+        <h3>Smartwatch Sport</h3>
+        <p class="price">$89.99</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+      <div class="card">
+        <img src="https://via.placeholder.com/250x180?text=Teclado+RGB" alt="Teclado Mecánico">
+        <h3>Teclado Mecánico RGB</h3>
+        <p class="price">$75.00</p>
+        <button class="btn">Comprar</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="resenas" class="section bg-light">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="grid-container">
+      
+      <div class="review-card">
+        <p>"Excelente atención y la calidad de los audífonos superó mis expectativas."</p>
+        <span>- Carlos M.</span>
+      </div>
+
+      <div class="review-card">
+        <p>"El envio llegó rápido y el teclado funciona perfecto. 100% recomendado."</p>
+        <span>- Ana R.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 ElectroTech. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

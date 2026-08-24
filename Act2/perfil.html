@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tarjeta de Perfil - Alejandro Alonso</title>
+    <!-- 1. Importamos el CSS de Bootstrap 5 desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.min.css" rel="stylesheet">
+  </head>
+  <!-- Requisito: Fondo claro para la página completa -->
+  <body class="bg-light">
+
+    <!-- Requisito: Tarjeta centrada vertical y horizontalmente (vh-100 para altura completa, d-flex para centrar) -->
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+
+      <!-- Requisito: Responsive (usamos col-11 para móvil y col-md-5 para pantallas medianas) -->
+      <!-- Requisito: Borde redondeado con color primario (border, border-primary, rounded-4) -->
+      <!-- Requisito: Fondo blanco para la tarjeta (bg-white) -->
+      <div class="col-11 col-md-5 bg-white border border-primary rounded-4 p-4 p-md-5 shadow">
+        
+        <!-- Contenedor interno centrado -->
+        <div class="d-flex flex-column align-items-center text-center">
+          
+          <!-- Requisito: Avatar circular con sombra (rounded-circle, shadow) -->
+          <!-- Usamos p-1 y border-white para crear el efecto de anillo blanco que se ve en la imagen -->
+          <!-- Avatar circular con sombra -->
+<img src="WARM1.png" alt="Foto de perfil" class="rounded-circle shadow p-1 bg-white" style="width: 120px; height: 120px; object-fit: cover;">
+
+          <!-- Requisito: Nombre en negrita y color primario (fw-bold, text-primary, mt-4) -->
+          <h2 class="h3 fw-bold text-primary mt-4 mb-1">Esdras Rodriguez</h2>
+
+          <!-- Requisito: Descripción centrada y atenuada (text-muted, mb-4) -->
+          <p class="text-muted mb-4">Analista de Datos</p>
+
+          <!-- Requisito: Habilidades como badges en lista horizontal (d-flex, justify-content-center, gap) -->
+          <div class="d-flex justify-content-center flex-wrap gap-1 mb-4">
+            <span class="badge bg-primary rounded-pill">PowerBi</span>
+            <span class="badge bg-success rounded-pill">Python</span>
+            <span class="badge bg-danger rounded-pill">JavaScript</span>
+            <span class="badge bg-info text-dark rounded-pill">Excel</span>
+          </div>
+
+          <!-- Requisito: Botón con ícono y estilo outline (btn-outline-primary) -->
+          <!-- Agregamos un ícono SVG simple para el sobre -->
+          <a href="#" class="btn btn-outline-primary btn-lg w-100 rounded-3 d-flex align-items-center justify-content-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+            </svg>
+            Contactar
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. Bootstrap JS (Opcional para este diseño, pero bueno tenerlo) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

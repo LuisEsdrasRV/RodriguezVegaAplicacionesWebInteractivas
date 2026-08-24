@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HEADER & NAV */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a2e;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-desktop a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* SIDEBAR & OVERLAY */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #16213e;
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+  z-index: 200;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  float: right;
+  cursor: pointer;
+}
+
+.nav-sidebar {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nav-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 150;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: #0f3460;
+  color: #fff;
+}
+
+/* SECCIONES Y GRIDS */
+.section {
+  padding: 3rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bg-light {
+  background-color: #f4f4f9;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* CARDS */
+.card, .review-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  background: #fff;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.card h3 {
+  margin: 0.8rem 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #e94560;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.btn {
+  background-color: #0f3460;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #16213e;
+}
+
+.review-card span {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #666;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #1a1a2e;
+  color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
