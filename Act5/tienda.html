@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda · Landing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="#">Tienda</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+        <button class="btn btn-outline-primary ms-lg-3 position-relative cart-icon-btn" data-bs-toggle="modal" data-bs-target="#mainCartModal">
+          🛒 Carrito
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm scale-transition" id="cart-badge" style="display: none;">
+            0
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-section text-white py-5">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-3 fw-bold hero-title">Encuentra lo que <br>realmente necesitas</h1>
+          <p class="lead my-4">Calidad, estilo y precios increíbles. Todo en un solo lugar.</p>
+          <a href="#productos" class="btn btn-light btn-lg rounded-pill px-5 py-3 shadow">
+            Explorar tienda
+          </a>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block text-end">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&auto=format&fit=crop&q=80"
+            alt="Tienda" class="img-fluid rounded-4 shadow-lg hero-img" style="max-height: 350px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="productos" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="display-5 fw-bold">Productos destacados</h2>
+        <p class="text-muted">Los más vendidos esta temporada</p>
+      </div>
+
+      <div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
+        <button class="btn btn-primary filter-btn rounded-pill px-4" data-filter="all">Todos</button>
+        <button class="btn btn-outline-primary filter-btn rounded-pill px-4" data-filter="accesorios">Accesorios</button>
+        <button class="btn btn-outline-primary filter-btn rounded-pill px-4" data-filter="calzado">Calzado</button>
+        <button class="btn btn-outline-primary filter-btn rounded-pill px-4" data-filter="electronica">Electrónica</button>
+        <button class="btn btn-outline-danger ms-md-3 rounded-pill px-4 mt-2 mt-md-0" id="btn-clear-filters">Limpiar Filtros ×</button>
+      </div>
+
+      <div class="row g-4" id="products-grid">
+        <div class="col-md-6 col-lg-4 product-item" data-category="accesorios">
+          <div class="card product-card h-100 border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop&q=80" class="card-img-top" alt="Producto 1">
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">Nuevo</span>
+              <h5 class="card-title">Reloj deportivo</h5>
+              <p class="card-text text-muted">Diseño resistente y elegante.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h5 mb-0">$39.99</span>
+                <button class="btn btn-sm btn-outline-primary btn-add-to-cart" data-product="Reloj deportivo" data-price="39.99">
+                  Añadir ➕
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 product-item" data-category="calzado">
+          <div class="card product-card h-100 border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&auto=format&fit=crop&q=80" class="card-img-top" alt="Producto 2">
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-2">Oferta</span>
+              <h5 class="card-title">Zapatillas urbanas</h5>
+              <p class="card-text text-muted">Comodidad y estilo para tu día.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h5 mb-0">$59.99</span>
+                <button class="btn btn-sm btn-outline-primary btn-add-to-cart" data-product="Zapatillas urbanas" data-price="59.99">
+                  Añadir ➕
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 product-item" data-category="electronica">
+          <div class="card product-card h-100 border-0 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop&q=80" class="card-img-top" alt="Producto 3">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Eco</span>
+              <h5 class="card-title">Auriculares inalámbricos</h5>
+              <p class="card-text text-muted">Sonido envolvente y larga duración.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="h5 mb-0">$89.99</span>
+                <button class="btn btn-sm btn-outline-primary btn-add-to-cart" data-product="Auriculares inalámbricos" data-price="89.99">
+                  Añadir ➕
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ofertas" class="bg-light py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6">
+          <h2 class="display-5 fw-bold">Ofertas especiales</h2>
+          <p class="lead">Hasta <span class="text-primary fw-bold">30% de descuento</span> en toda la colección.</p>
+          <button class="btn btn-primary rounded-pill px-5 py-3 shadow" data-bs-toggle="modal" data-bs-target="#ofertasModal">
+            Ver ofertas
+          </button>
+        </div>
+        <div class="col-md-6 text-center">
+          <div class="display-1 text-primary opacity-25">%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold">Lo que dicen nuestros clientes</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="display-4 text-primary mb-3">👤</div>
+              <p class="card-text">"Excelente calidad y envío rápido."</p>
+              <h6 class="card-subtitle text-muted">— María G.</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="display-4 text-primary mb-3">👤</div>
+              <p class="card-text">"Los precios son muy competitivos."</p>
+              <h6 class="card-subtitle text-muted">— Carlos R.</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="display-4 text-primary mb-3">👤</div>
+              <p class="card-text">"Mi pedido llegó en perfectas condiciones."</p>
+              <h6 class="card-subtitle text-muted">— Laura S.</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h2 class="display-5 fw-bold">Ofertas exclusivas</h2>
+          <p class="text-secondary">Suscríbete y recibe descuentos especiales.</p>
+          <div class="input-group mt-4 mx-auto" style="max-width: 500px;">
+            <input type="email" id="emailInput" class="form-control form-control-lg" placeholder="Tu email">
+            <button class="btn btn-primary btn-lg" id="btnSubscribe" type="button">Suscribirme</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black text-white-50 py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-0">© 2026 Tienda. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#" class="text-white-50 me-3">Facebook</a>
+          <a href="#" class="text-white-50 me-3">Instagram</a>
+          <a href="#" class="text-white-50">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal PRINCIPAL del Carrito de Compras -->
+  <div class="modal fade" id="mainCartModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Tu Carrito de Compras</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div id="cart-empty-msg" class="text-center py-5">
+            <h1 class="display-1 text-muted opacity-25">🛒</h1>
+            <p class="text-muted mt-3">Tu carrito está vacío.</p>
+          </div>
+          <ul class="list-group list-group-flush" id="cart-items-list">
+          </ul>
+        </div>
+        <div class="modal-footer bg-light d-flex justify-content-between">
+          <h5 class="mb-0">Total: <span id="cart-total-price" class="text-primary fw-bold">$0.00</span></h5>
+          <div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-success" id="btn-checkout" disabled>Pagar ahora</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Producto añadido (Notificación) -->
+  <div class="modal fade" id="carritoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-body text-center py-4">
+          <div class="display-4 text-success mb-2 animate-pop">✓</div>
+          <h5 id="modalProductName" class="mb-1">Producto</h5>
+          <p class="text-muted small">Añadido al carrito</p>
+          <button type="button" class="btn btn-sm btn-outline-secondary mt-2" data-bs-dismiss="modal">Seguir comprando</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Ofertas especiales -->
+  <div class="modal fade" id="ofertasModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Ofertas especiales</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card border-warning">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Electrónica</h5>
+                  <p class="card-text display-6 text-warning">-20%</p>
+                  <p class="text-muted">En todos los auriculares y relojes</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-success">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Moda</h5>
+                  <p class="card-text display-6 text-success">-30%</p>
+                  <p class="text-muted">En zapatillas y accesorios</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card border-danger">
+                <div class="card-body text-center">
+                  <h5 class="card-title">¡Últimas unidades!</h5>
+                  <p class="text-danger fw-bold">Envío gratis en compras mayores a $100</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aprovechar ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Suscripción exitosa -->
+  <div class="modal fade" id="suscripcionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title">¡Suscripción exitosa!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <div class="display-1 text-info mb-3">✓</div>
+          <h4>¡Gracias por suscribirte!</h4>
+          <p class="text-muted">Recibirás nuestras ofertas exclusivas en:</p>
+          <div class="alert alert-light border mt-3">
+            <strong id="modalEmailSubscription">usuario@email.com</strong>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info text-white" data-bs-dismiss="modal">Genial</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Error en suscripción -->
+  <div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">Error</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <div class="display-1 text-danger mb-3">✗</div>
+          <h4>Email no válido</h4>
+          <p class="text-muted">Por favor, ingresa una dirección de correo válida.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Intentar de nuevo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: Asegúrate de eliminar jqery.js y usar solo estos -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
