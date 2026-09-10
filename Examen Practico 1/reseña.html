@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Reviews - Detalle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark px-3">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-film"></i> Movie Reviews</a>
+        <div class="d-flex align-items-center gap-3">
+            <a href="index.html" class="text-white text-decoration-none">Inicio</a>
+            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#favModal">
+                <i class="bi bi-heart"></i> Favoritos <span id="fav-count" class="badge bg-danger">0</span>
+            </button>
+        </div>
+    </nav>
+    
+    <div class="container mt-4" id="movie-details" style="display: none;">
+        <!-- El contenedor inicia oculto para usar .fadeIn() desde app.js -->
+        <div class="row">
+            <div class="col-md-4 mb-4 text-center">
+                <img id="detail-img" class="img-fluid rounded shadow" alt="Poster">
+            </div>
+            <div class="col-md-8">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+                    <h1 id="detail-title" class="mb-0"></h1>
+                    <button class="btn btn-outline-danger" id="detail-fav-btn"><i class="bi bi-heart"></i> Favorito</button>
+                </div>
+                <p class="text-muted"><span id="detail-year"></span> | <span id="detail-runtime"></span> min | ⭐ <span id="detail-rating"></span></p>
+                <div id="detail-genres" class="mb-3"></div>
+                <div class="mb-3">
+                    <strong>Metascore: </strong>
+                    <div class="progress mt-1" style="height: 20px; width: 200px;">
+                        <div id="detail-metascore" class="progress-bar" role="progressbar"></div>
+                    </div>
+                </div>
+                <blockquote class="blockquote border-start border-primary border-4 ps-3 mt-4">
+                    <p id="detail-description"></p>
+                </blockquote>
+                
+                <a id="detail-trailer" target="_blank" class="btn btn-danger mt-3"><i class="bi bi-play-circle"></i> Ver Tráiler</a>
+                <a href="index.html" class="btn btn-secondary mt-3 ms-2">Volver</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Favoritos -->
+    <div class="modal fade" id="favModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-heart-fill text-danger"></i> Mis Favoritos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="fav-modal-body">
+                    <!-- Se llena con jQuery -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-danger" id="clear-favs">Eliminar todos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Lógica extendida para Metascore al renderizar detalles
+        function setMetascore(score) {
+            let color = 'bg-danger'; 
+            if (score >= 70) color = 'bg-success'; 
+            else if (score >= 50) color = 'bg-warning'; 
+            $('#detail-metascore').css('width', score + '%').text(score).removeClass('bg-danger bg-success bg-warning').addClass(color);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Reviews - Inicio</title>
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark px-3">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-film"></i> Movie Reviews</a>
+        <div class="d-flex align-items-center gap-3">
+            <a href="index.html" class="text-white text-decoration-none">Inicio</a>
+            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#favModal">
+                <i class="bi bi-heart"></i> Favoritos <span id="fav-count" class="badge bg-danger">0</span>
+            </button>
+            <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="Buscar película...">
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="text-center text-primary"><i class="bi bi-film"></i> Películas Destacadas</h2>
+        <p class="text-center text-muted">Las mejores películas según la crítica y el público.</p>
+        
+        <!-- Filtros -->
+        <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
+            <button class="btn btn-outline-primary btn-filter" data-range="all">Todos</button>
+            <button class="btn btn-outline-primary btn-filter" data-range="1990-1999">1990-1999</button>
+            <button class="btn btn-outline-primary btn-filter" data-range="2000-2009">2000-2009</button>
+            <button class="btn btn-outline-primary btn-filter" data-range="2010-2019">2010-2019</button>
+            <button class="btn btn-outline-primary btn-filter" data-range="2020-2026">2020-2026</button>
+        </div>
+
+        <!-- Spinner & Grid -->
+        <div id="loading-spinner" class="text-center my-5"><div class="spinner-border text-primary"></div></div>
+        <div class="row" id="movie-grid"></div>
+    </div>
+
+    <!-- Modal Favoritos -->
+    <div class="modal fade" id="favModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-heart-fill text-danger"></i> Mis Favoritos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="fav-modal-body">
+                    <!-- Se llena con jQuery -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-danger" id="clear-favs">Eliminar todos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
